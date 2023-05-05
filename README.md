@@ -1,6 +1,6 @@
 # bank-crm-sample
 
-依存関係に難があるのでnpm install にあｈ --force をつけてください。
+依存関係に難があるのでnpm install にあるので --force をつけてください。
 ```bash
 npm install --force
 ```
