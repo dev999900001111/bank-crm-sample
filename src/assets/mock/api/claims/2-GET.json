@@ -1,0 +1,11 @@
+{
+    "claim": {
+        "id": 2,
+        "customerId": 2,
+        "title": "請求書の不備について",
+        "description": "請求書の金額が合わないため、確認したい",
+        "date": "2021-10-05",
+        "status": "IN_PROGRESS",
+        "response": ""
+    }
+}

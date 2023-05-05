@@ -1,0 +1,64 @@
+```
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>売上パフォーマンス</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <mat-table [dataSource]="salesData">
+            <ng-container matColumnDef="date">
+              <mat-header-cell *matHeaderCellDef>日付</mat-header-cell>
+              <mat-cell *matCellDef="let element">{{element.date | date}}</mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="amount">
+              <mat-header-cell *matHeaderCellDef>金額</mat-header-cell>
+              <mat-cell *matCellDef="let element">{{element.amount | currency:'JPY'}}</mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="product">
+              <mat-header-cell *matHeaderCellDef>商品</mat-header-cell>
+              <mat-cell *matCellDef="let element">{{element.product}}</mat-cell>
+            </ng-container>
+            <mat-header-row *matHeaderRowDef="['date', 'amount', 'product']"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: ['date', 'amount', 'product']"></mat-row>
+          </mat-table>
+          <div class="chart-container">
+            <canvas baseChart [datasets]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions"
+              [colors]="lineChartColors" [legend]="lineChartLegend" [chartType]="lineChartType"></canvas>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    <div class="col-md-6">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>KPI概要</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <mat-table [dataSource]="kpis">
+            <ng-container matColumnDef="name">
+              <mat-header-cell *matHeaderCellDef>名前</mat-header-cell>
+              <mat-cell *matCellDef="let element">{{element.name}}</mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="value">
+              <mat-header-cell *matHeaderCellDef>値</mat-header-cell>
+              <mat-cell *matCellDef="let element">{{element.value}} {{element.unit}}</mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="target">
+              <mat-header-cell *matHeaderCellDef>目標</mat-header-cell>
+              <mat-cell *matCellDef="let element">{{element.target}} {{element.unit}}</mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="unit">
+              <mat-header-cell *matHeaderCellDef>単位</mat-header-cell>
+              <mat-cell *matCellDef="let element">{{element.unit}}</mat-cell>
+            </ng-container>
+            <mat-header-row *matHeaderRowDef="['name', 'value', 'target', 'unit']"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: ['name', 'value', 'target', 'unit']"></mat-row>
+          </mat-table>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>
+```

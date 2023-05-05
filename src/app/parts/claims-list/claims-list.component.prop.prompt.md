@@ -1,0 +1,61 @@
+# html
+```html
+<!-- claims-list.component.html -->
+<div class="header">
+  <h1>請求一覧</h1>
+  <button mat-raised-button color="primary">新しい請求を作成</button>
+</div>
+
+<div class="search-bar">
+  <mat-form-field>
+    <input matInput placeholder="顧客名または請求タイトルで検索">
+  </mat-form-field>
+</div>
+
+<div class="table-container">
+  <table mat-table [dataSource]="claims" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="title">
+      <th mat-header-cell *matHeaderCellDef>タイトル</th>
+      <td mat-cell *matCellDef="let claim">{{ claim.title }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="customer">
+      <th mat-header-cell *matHeaderCellDef>顧客名</th>
+      <td mat-cell *matCellDef="let claim">{{ claim.customerId }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="date">
+      <th mat-header-cell *matHeaderCellDef>日付</th>
+      <td mat-cell *matCellDef="let claim">{{ claim.date | date }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="status">
+      <th mat-header-cell *matHeaderCellDef>ステータス</th>
+      <td mat-cell *matCellDef="let claim">{{ claim.status }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef>アクション</th>
+      <td mat-cell *matCellDef="let claim">
+        <button mat-icon-button color="primary" (click)="openClaimDetailsDialog(claim)">
+          <mat-icon>visibility</mat-icon>
+        </button>
+        <button mat-icon-button color="accent">
+          <mat-icon>reply</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>
+
+<app-claim-details-dialog [claim]="selectedClaim" (claimChange)="onClaimChange($event)"></app-claim-details-dialog>
+```
+
+# prompt
+The above html is an Angular template.
+Please list all "variables", "constants", "ViewChild", and "functions" needed to create the ts. mat-table's column names are also "constants".
+The format should be name, type, description.

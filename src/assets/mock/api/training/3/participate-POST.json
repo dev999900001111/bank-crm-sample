@@ -1,0 +1,14 @@
+{
+    "training": {
+        "id": 3,
+        "title": "トレーニング3",
+        "description": "トレーニング3の詳細",
+        "startDate": "2021-02-01",
+        "endDate": "2021-02-02",
+        "status": "UPCOMING",
+        "participants": [
+            3,
+            4
+        ]
+    }
+}

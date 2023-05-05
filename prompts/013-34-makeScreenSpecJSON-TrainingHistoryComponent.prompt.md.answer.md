@@ -1,0 +1,1 @@
+{"modelClassesUsed":["Training","TrainingStatus"], "serviceClassesUsed":["TrainingService"]}

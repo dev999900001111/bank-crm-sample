@@ -1,0 +1,10 @@
+{
+    "literature": {
+        "id": 1,
+        "title": "営業資料1",
+        "description": "営業資料1の説明",
+        "uploadDate": "2021-01-01",
+        "fileUrl": "https://example.com/sales-literature/1",
+        "fileType": "PDF"
+    }
+}

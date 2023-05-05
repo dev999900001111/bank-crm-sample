@@ -1,0 +1,59 @@
+```
+<div class="training-management-container">
+  <div class="training-history">
+    <h2>トレーニング履歴</h2>
+    <div *ngIf="trainings.length === 0">
+      <p>完了したトレーニングはありません。</p>
+    </div>
+    <div *ngIf="trainings.length > 0">
+      <table mat-table [dataSource]="trainings" class="mat-elevation-z8">
+        <ng-container matColumnDef="title">
+          <th mat-header-cell *matHeaderCellDef>タイトル</th>
+          <td mat-cell *matCellDef="let training">{{training.title}}</td>
+        </ng-container>
+        <ng-container matColumnDef="description">
+          <th mat-header-cell *matHeaderCellDef>説明</th>
+          <td mat-cell *matCellDef="let training">{{training.description}}</td>
+        </ng-container>
+        <ng-container matColumnDef="startDate">
+          <th mat-header-cell *matHeaderCellDef>開始日</th>
+          <td mat-cell *matCellDef="let training">{{training.startDate | date: 'yyyy/MM/dd'}}</td>
+        </ng-container>
+        <ng-container matColumnDef="endDate">
+          <th mat-header-cell *matHeaderCellDef>終了日</th>
+          <td mat-cell *matCellDef="let training">{{training.endDate | date: 'yyyy/MM/dd'}}</td>
+        </ng-container>
+        <ng-container matColumnDef="status">
+          <th mat-header-cell *matHeaderCellDef>ステータス</th>
+          <td mat-cell *matCellDef="let training">{{training.status}}</td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="['title', 'description', 'startDate', 'endDate', 'status']"></tr>
+        <tr mat-row *matRowDef="let row; columns: ['title', 'description', 'startDate', 'endDate', 'status']" (click)="onTrainingClick(row)"></tr>
+      </table>
+    </div>
+  </div>
+  <div class="training-participation">
+    <h2>トレーニング参加</h2>
+    <div *ngIf="upcomingTrainings.length === 0">
+      <p>参加可能なトレーニングはありません。</p>
+    </div>
+    <div *ngIf="upcomingTrainings.length > 0">
+      <mat-card>
+        <mat-card-content>
+          <mat-form-field>
+            <mat-label>トレーニングセッション</mat-label>
+            <mat-select [(ngModel)]="selectedTraining" (ngModelChange)="onTrainingChange()">
+              <mat-option *ngFor="let training of upcomingTrainings" [value]="training">{{training.title}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <div class="skill-acquisition-status">
+            <p>スキル習得状況</p>
+            <mat-progress-bar mode="determinate" [value]="skillAcquisitionStatus"></mat-progress-bar>
+          </div>
+          <button mat-raised-button color="primary" (click)="onParticipateClick()">参加する</button>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>
+```

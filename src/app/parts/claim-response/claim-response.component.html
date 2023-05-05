@@ -1,0 +1,19 @@
+<div class="container">
+  <h2 class="mat-h2">クレーム対応</h2>
+  <div class="mat-subheading-2">クレームの詳細</div>
+  <div class="mat-body-1">
+    <div><strong>タイトル:</strong> {{claim.title}}</div>
+    <div><strong>説明:</strong> {{claim.description}}</div>
+    <div><strong>日付:</strong> {{claim.date | date:'yyyy/MM/dd'}}</div>
+    <div><strong>ステータス:</strong> {{claim.status}}</div>
+  </div>
+  <form class="mat-body-1" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <mat-label>返信メッセージ</mat-label>
+      <input matInput [(ngModel)]="responseMessage" name="responseMessage" required>
+    </mat-form-field>
+    <div class="error-message" *ngIf="formSubmitted && !responseMessage">返信メッセージを入力してください。</div>
+    <button mat-raised-button color="primary" type="submit">送信</button>
+    <button mat-raised-button color="warn" (click)="onCancel()">キャンセル</button>
+  </form>
+</div>

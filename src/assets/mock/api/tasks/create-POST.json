@@ -1,0 +1,17 @@
+{
+    "task": {
+        "id": 1,
+        "userId": 1,
+        "title": "タスクA",
+        "description": "タスクAの説明",
+        "startDate": "2022-01-01T00:00:00.000Z",
+        "endDate": "2022-01-31T00:00:00.000Z",
+        "status": "NOT_STARTED",
+        "reminder": {
+            "id": 1,
+            "taskId": 1,
+            "time": "2022-01-01T10:00:00.000Z",
+            "message": "タスクAのリマインダー"
+        }
+    }
+}

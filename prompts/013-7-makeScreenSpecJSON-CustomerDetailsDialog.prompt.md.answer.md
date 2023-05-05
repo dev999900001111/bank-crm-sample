@@ -1,0 +1,1 @@
+{"modelClassesUsed":["Customer","Sale","SalesData"], "serviceClassesUsed":["CustomerService","SalesService"]}

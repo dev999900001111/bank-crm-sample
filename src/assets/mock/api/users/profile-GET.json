@@ -1,0 +1,11 @@
+{
+    "user": {
+        "id": 1,
+        "username": "john_doe",
+        "email": "john.doe@example.com",
+        "firstName": "太郎",
+        "lastName": "山田",
+        "role": "ADMIN",
+        "profileImage": "https://example.com/profile.jpg"
+    }
+}

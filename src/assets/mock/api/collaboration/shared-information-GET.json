@@ -1,0 +1,28 @@
+{
+    "sharedInformation": [
+        {
+            "id": 1,
+            "userId": 2,
+            "title": "成功事例1",
+            "description": "成功事例1の詳細",
+            "date": "2021-01-01",
+            "category": "SUCCESS_STORY"
+        },
+        {
+            "id": 2,
+            "userId": 3,
+            "title": "ノウハウ1",
+            "description": "ノウハウ1の詳細",
+            "date": "2021-01-02",
+            "category": "KNOW_HOW"
+        },
+        {
+            "id": 3,
+            "userId": 4,
+            "title": "コツ1",
+            "description": "コツ1の詳細",
+            "date": "2021-01-03",
+            "category": "TIP"
+        }
+    ]
+}

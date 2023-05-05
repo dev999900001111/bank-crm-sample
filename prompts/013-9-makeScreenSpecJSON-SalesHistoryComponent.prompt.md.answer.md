@@ -1,0 +1,1 @@
+{"modelClassesUsed":["Model class 1", "Model class 2"], "serviceClassesUsed":["Service class 1", "Service class 2"]}

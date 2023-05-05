@@ -1,0 +1,49 @@
+```
+<!-- training-history.component.html -->
+
+<h2>トレーニング履歴</h2>
+
+<mat-table [dataSource]="trainings" class="mat-elevation-z8">
+
+  <ng-container matColumnDef="title">
+    <mat-header-cell *matHeaderCellDef>タイトル</mat-header-cell>
+    <mat-cell *matCellDef="let training">{{ training.title }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="description">
+    <mat-header-cell *matHeaderCellDef>説明</mat-header-cell>
+    <mat-cell *matCellDef="let training">{{ training.description }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="startDate">
+    <mat-header-cell *matHeaderCellDef>開始日</mat-header-cell>
+    <mat-cell *matCellDef="let training">{{ training.startDate | date: 'yyyy/MM/dd' }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="endDate">
+    <mat-header-cell *matHeaderCellDef>終了日</mat-header-cell>
+    <mat-cell *matCellDef="let training">{{ training.endDate | date: 'yyyy/MM/dd' }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="status">
+    <mat-header-cell *matHeaderCellDef>ステータス</mat-header-cell>
+    <mat-cell *matCellDef="let training">{{ training.status }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="participate">
+    <mat-header-cell *matHeaderCellDef>参加</mat-header-cell>
+    <mat-cell *matCellDef="let training">
+      <button mat-raised-button color="primary" (click)="participate(training.id)" *ngIf="training.status === 'UPCOMING'">参加する</button>
+    </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="effectivenessScore">
+    <mat-header-cell *matHeaderCellDef>効果スコア</mat-header-cell>
+    <mat-cell *matCellDef="let training">{{ getEffectivenessScore(training.id) }}</mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let training; columns: displayedColumns;"></mat-row>
+
+</mat-table>
+```

@@ -1,0 +1,10 @@
+{
+    "info": {
+        "id": 1,
+        "userId": 2,
+        "title": "成功事例1",
+        "description": "成功事例1の詳細",
+        "date": "2021-01-01",
+        "category": "SUCCESS_STORY"
+    }
+}

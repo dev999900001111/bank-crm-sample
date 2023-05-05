@@ -1,0 +1,22 @@
+{
+    "teamMembers": [
+        {
+            "id": 2,
+            "username": "jane_smith",
+            "email": "jane.smith@example.com",
+            "firstName": "ジェーン",
+            "lastName": "スミス",
+            "role": "MANAGER",
+            "profileImage": "https://example.com/profile.jpg"
+        },
+        {
+            "id": 3,
+            "username": "bob_johnson",
+            "email": "bob.johnson@example.com",
+            "firstName": "ボブ",
+            "lastName": "ジョンソン",
+            "role": "EMPLOYEE",
+            "profileImage": "https://example.com/profile.jpg"
+        }
+    ]
+}

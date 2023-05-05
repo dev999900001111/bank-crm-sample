@@ -1,0 +1,63 @@
+```
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>チームメンバー</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <mat-form-field>
+            <input matInput placeholder="検索">
+          </mat-form-field>
+          <table mat-table [dataSource]="teamMembers">
+            <ng-container matColumnDef="id">
+              <th mat-header-cell *matHeaderCellDef> ID </th>
+              <td mat-cell *matCellDef="let member"> {{member.id}} </td>
+            </ng-container>
+            <ng-container matColumnDef="name">
+              <th mat-header-cell *matHeaderCellDef> 名前 </th>
+              <td mat-cell *matCellDef="let member"> {{member.firstName}} {{member.lastName}} </td>
+            </ng-container>
+            <ng-container matColumnDef="role">
+              <th mat-header-cell *matHeaderCellDef> 役割 </th>
+              <td mat-cell *matCellDef="let member"> {{member.role}} </td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="['id', 'name', 'role']"></tr>
+            <tr mat-row *matRowDef="let member; columns: ['id', 'name', 'role']"></tr>
+          </table>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    <div class="col-md-6">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>共有情報</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <mat-form-field>
+            <input matInput placeholder="検索">
+          </mat-form-field>
+          <table mat-table [dataSource]="sharedInfo">
+            <ng-container matColumnDef="id">
+              <th mat-header-cell *matHeaderCellDef> ID </th>
+              <td mat-cell *matCellDef="let info"> {{info.id}} </td>
+            </ng-container>
+            <ng-container matColumnDef="title">
+              <th mat-header-cell *matHeaderCellDef> タイトル </th>
+              <td mat-cell *matCellDef="let info"> {{info.title}} </td>
+            </ng-container>
+            <ng-container matColumnDef="category">
+              <th mat-header-cell *matHeaderCellDef> カテゴリー </th>
+              <td mat-cell *matCellDef="let info"> {{info.category}} </td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="['id', 'title', 'category']"></tr>
+            <tr mat-row *matRowDef="let info; columns: ['id', 'title', 'category']"></tr>
+          </table>
+          <button mat-raised-button color="primary" (click)="openDialog()">追加</button>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>
+```

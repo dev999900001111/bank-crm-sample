@@ -1,0 +1,8 @@
+<div class="card">
+  <h2 class="title">{{training.title}}</h2>
+  <p class="description">{{training.description}}</p>
+  <p class="date">{{training.startDate | date: 'yyyy年MM月dd日'}} - {{training.endDate | date: 'yyyy年MM月dd日'}}</p>
+  <p class="participants">{{training.participants.length}}人が参加中</p>
+  <button class="participate-button" (click)="participate()">{{training.status === 'UPCOMING' ? '参加する' : '参加中'}}</button>
+  <mat-progress-bar class="progress-bar" mode="determinate" [value]="calculateProgress()"></mat-progress-bar>
+</div>

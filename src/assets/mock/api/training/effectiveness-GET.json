@@ -1,0 +1,40 @@
+{
+    "trainingEffectiveness": [
+        {
+            "id": 1,
+            "trainingId": 1,
+            "userId": 1,
+            "effectivenessScore": 4
+        },
+        {
+            "id": 2,
+            "trainingId": 1,
+            "userId": 2,
+            "effectivenessScore": 3
+        },
+        {
+            "id": 3,
+            "trainingId": 2,
+            "userId": 1,
+            "effectivenessScore": 5
+        },
+        {
+            "id": 4,
+            "trainingId": 3,
+            "userId": 3,
+            "effectivenessScore": 2
+        },
+        {
+            "id": 5,
+            "trainingId": 4,
+            "userId": 2,
+            "effectivenessScore": 4
+        },
+        {
+            "id": 6,
+            "trainingId": 5,
+            "userId": 1,
+            "effectivenessScore": 3
+        }
+    ]
+}

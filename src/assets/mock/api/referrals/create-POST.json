@@ -1,0 +1,9 @@
+{
+    "referral": {
+        "id": 1,
+        "customerId": 1,
+        "referralDate": "2021-10-15",
+        "status": "CONTACTED",
+        "notes": "紹介者からの情報を元に、商品のニーズがあると判断し、アプローチを開始しました。"
+    }
+}

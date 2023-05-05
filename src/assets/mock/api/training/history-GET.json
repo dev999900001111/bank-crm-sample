@@ -1,0 +1,65 @@
+{
+    "trainings": [
+        {
+            "id": 1,
+            "title": "トレーニング1",
+            "description": "トレーニング1の詳細",
+            "startDate": "2021-01-01",
+            "endDate": "2021-01-02",
+            "status": "COMPLETED",
+            "participants": [
+                2,
+                3,
+                4
+            ]
+        },
+        {
+            "id": 2,
+            "title": "トレーニング2",
+            "description": "トレーニング2の詳細",
+            "startDate": "2021-02-01",
+            "endDate": "2021-02-02",
+            "status": "CANCELED",
+            "participants": [
+                3,
+                4
+            ]
+        },
+        {
+            "id": 3,
+            "title": "トレーニング3",
+            "description": "トレーニング3の詳細",
+            "startDate": "2021-02-01",
+            "endDate": "2021-02-02",
+            "status": "UPCOMING",
+            "participants": [
+                3,
+                4
+            ]
+        },
+        {
+            "id": 4,
+            "title": "トレーニング4",
+            "description": "トレーニング4の詳細",
+            "startDate": "2021-02-04",
+            "endDate": "2021-02-08",
+            "status": "UPCOMING",
+            "participants": [
+                3,
+                4
+            ]
+        },
+        {
+            "id": 5,
+            "title": "トレーニング5",
+            "description": "トレーニング5の詳細",
+            "startDate": "2021-02-05",
+            "endDate": "2021-02-102",
+            "status": "UPCOMING",
+            "participants": [
+                3,
+                4
+            ]
+        }
+    ]
+}

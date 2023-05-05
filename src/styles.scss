@@ -1,0 +1,43 @@
+/* You can add global styles to this file, and also import other style files */
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+
+@import '~@angular/material/theming';
+@include mat-core();
+
+$primary: mat-palette($mat-blue, 500, 100, 700);
+$accent: mat-palette($mat-pink);
+$warn: mat-palette($mat-red);
+
+$theme: mat-light-theme((color: (primary: $primary,
+      accent: $accent,
+      warn: $warn)));
+
+@include angular-material-theme($theme);
+
+app-root {
+
+  .mat-card,
+  .mat-elevation-z8 {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .mat-raised-button,
+  .mat-form-field {
+    border-radius: 0;
+  }
+
+  table {
+    width: 100%;
+  }
+}

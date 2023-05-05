@@ -1,0 +1,130 @@
+<ng-container *ngIf="['/login','/index.html','/'].indexOf(routerLink)!==-1;then notauth;else authed"></ng-container>
+<ng-template #notauth>
+    <router-outlet></router-outlet>
+    <div style="width: 100%;text-align: center;margin-top: 20px;text-decoration: underline;color:#1976d2;cursor: pointer;font-size: 14px;"
+        (click)="openLicense()">license.</div>
+</ng-template>
+<ng-template #authed>
+    <mat-toolbar class="toolbar" style="display:flex;justify-content: space-between;" color="primary">
+        <div style="display: flex;align-items: center;gap: 30px;">
+            <img src="assets/images/logo.png" alt="CRM Logo" class="logo">
+            <span class="username">{{ user?.lastName }} {{ user?.firstName }}</span>
+        </div>
+        <div>
+            <button mat-icon-button routerLink="/dashboard">
+                <mat-icon>home</mat-icon>
+            </button>
+            <span class="spacer"></span>
+            <button mat-icon-button [matMenuTriggerFor]="userMenu">
+                <mat-icon>account_circle</mat-icon>
+            </button>
+            <mat-menu #userMenu="matMenu">
+                <!-- <button mat-menu-item routerLink="/profile"> -->
+                <button mat-menu-item>
+                    <mat-icon>person</mat-icon>
+                    <span>プロフィールを編集</span>
+                </button>
+                <button mat-menu-item (click)="openChangePasswordDialog()">
+                    <mat-icon>lock</mat-icon>
+                    <span>パスワードを変更</span>
+                </button>
+                <button mat-menu-item (click)="logout()">
+                    <mat-icon>exit_to_app</mat-icon>
+                    <span>ログアウト</span>
+                </button>
+            </mat-menu>
+            <button mat-icon-button [matMenuTriggerFor]="notificationsMenu">
+                <mat-icon>notifications</mat-icon>
+            </button>
+            <mat-menu #notificationsMenu="matMenu">
+                <div mat-menu-item *ngFor="let notification of notifications" class="notification">
+
+                    <div class="notification-content">
+                        <div class="notification-title">
+                            <mat-icon>{{notification.icon}}</mat-icon>
+                            {{ notification.title }}
+                        </div>
+                        <div style="display:flex;gap:10px;align-items: baseline;">
+                            <span class="notification-time">{{ notification.time }}</span>
+                            <div class="notification-message">{{ notification.message }}</div>
+                        </div>
+                    </div>
+                </div>
+            </mat-menu>
+        </div>
+    </mat-toolbar>
+    <div class="side">
+        <mat-nav-list style="width: 250px;background-color: #f5f5f5;height: calc(100vh - 77px);position: relative;">
+            <mat-list-item routerLink="/dashboard" routerLinkActive="active-link">
+                <mat-icon>dashboard</mat-icon>
+                <span class="link-text">ダッシュボード</span>
+            </mat-list-item>
+            <mat-list-item routerLink="/customer-management" routerLinkActive="active-link">
+                <mat-icon>people</mat-icon>
+                <span class="link-text">顧客管理</span>
+            </mat-list-item>
+            <mat-list-item routerLink="/sales-management" routerLinkActive="active-link">
+                <mat-icon>attach_money</mat-icon>
+                <span class="link-text">売上管理</span>
+            </mat-list-item>
+            <mat-list-item routerLink="/task-management" routerLinkActive="active-link">
+                <mat-icon>assignment</mat-icon>
+                <span class="link-text">タスク管理</span>
+            </mat-list-item>
+            <mat-list-item routerLink="/performance-reporting" routerLinkActive="active-link">
+                <mat-icon>bar_chart</mat-icon>
+                <span class="link-text">パフォーマンスレポート</span>
+            </mat-list-item>
+            <mat-list-item routerLink="/claims-handling" routerLinkActive="active-link">
+                <mat-icon>gavel</mat-icon>
+                <span class="link-text">クレーム処理</span>
+            </mat-list-item>
+            <mat-list-item routerLink="/reference-management" routerLinkActive="active-link">
+                <mat-icon>library_books</mat-icon>
+                <span class="link-text">参照管理</span>
+            </mat-list-item>
+            <mat-list-item routerLink="/sales-literature-management" routerLinkActive="active-link">
+                <mat-icon>description</mat-icon>
+                <span class="link-text">営業資料管理</span>
+            </mat-list-item>
+            <mat-list-item routerLink="/team-collaboration" routerLinkActive="active-link">
+                <mat-icon>group</mat-icon>
+                <span class="link-text">チームコラボレーション</span>
+            </mat-list-item>
+            <mat-list-item routerLink="/training-management" routerLinkActive="active-link">
+                <mat-icon>school</mat-icon>
+                <span class="link-text">トレーニング管理</span>
+            </mat-list-item>
+
+            <mat-list-item style="position: absolute;bottom: 0;" (click)="openLicense()">
+                <mat-icon>info</mat-icon>
+                <span class="link-text">LICENSE</span>
+            </mat-list-item>
+        </mat-nav-list>
+        <div style="padding: 20px;width: 0%;flex-grow: 1;">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</ng-template>
+<ng-template #license>
+    <h1>Licenses</h1>
+    <div>
+        made with AI.
+        <table>
+            <thead>
+                <tr>
+                    <th>Package</th>
+                    <th>License</th>
+                    <th>Repository</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of licenses | keyvalue">
+                    <td>{{ item.key }}</td>
+                    <td>{{ item.value.licenses }}</td>
+                    <td><a href="{{ item.value.repository }}">{{ item.value.repository }}</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</ng-template>

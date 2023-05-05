@@ -1,0 +1,32 @@
+{
+    "referrals": [
+        {
+            "id": 1,
+            "customerId": 1,
+            "referralDate": "2022-01-01T00:00:00.000Z",
+            "status": "NEW",
+            "notes": "紹介者からの情報を待っています。"
+        },
+        {
+            "id": 2,
+            "customerId": 2,
+            "referralDate": "2022-01-02T00:00:00.000Z",
+            "status": "CONTACTED",
+            "notes": "紹介者と連絡を取りました。"
+        },
+        {
+            "id": 3,
+            "customerId": 3,
+            "referralDate": "2022-01-03T00:00:00.000Z",
+            "status": "CONVERTED",
+            "notes": "紹介者からの新規顧客を獲得しました！"
+        },
+        {
+            "id": 4,
+            "customerId": 4,
+            "referralDate": "2022-01-04T00:00:00.000Z",
+            "status": "LOST",
+            "notes": "紹介者からの情報を得られませんでした。"
+        }
+    ]
+}

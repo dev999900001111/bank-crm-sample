@@ -1,0 +1,1 @@
+{"modelClassesUsed":["User"], "serviceClassesUsed":["AuthService"]}

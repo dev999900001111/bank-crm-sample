@@ -1,0 +1,157 @@
+{
+  "@angular/animations@14.3.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/angular/angular",
+    "publisher": "angular",
+    "path": "/node_modules/@angular/animations",
+    "licenseFile": "/node_modules/@angular/animations/README.md"
+  },
+  "@angular/cdk@14.2.7": {
+    "licenses": "MIT",
+    "repository": "https://github.com/angular/components",
+    "path": "/node_modules/@angular/cdk",
+    "licenseFile": "/node_modules/@angular/cdk/LICENSE"
+  },
+  "@angular/common@14.3.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/angular/angular",
+    "publisher": "angular",
+    "path": "/node_modules/@angular/common",
+    "licenseFile": "/node_modules/@angular/common/README.md"
+  },
+  "@angular/compiler@14.3.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/angular/angular",
+    "publisher": "angular",
+    "path": "/node_modules/@angular/compiler",
+    "licenseFile": "/node_modules/@angular/compiler/README.md"
+  },
+  "@angular/core@14.3.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/angular/angular",
+    "publisher": "angular",
+    "path": "/node_modules/@angular/core",
+    "licenseFile": "/node_modules/@angular/core/README.md"
+  },
+  "@angular/forms@14.3.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/angular/angular",
+    "publisher": "angular",
+    "path": "/node_modules/@angular/forms",
+    "licenseFile": "/node_modules/@angular/forms/README.md"
+  },
+  "@angular/material@14.2.7": {
+    "licenses": "MIT",
+    "repository": "https://github.com/angular/components",
+    "path": "/node_modules/@angular/material",
+    "licenseFile": "/node_modules/@angular/material/LICENSE"
+  },
+  "@angular/platform-browser-dynamic@14.3.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/angular/angular",
+    "publisher": "angular",
+    "path": "/node_modules/@angular/platform-browser-dynamic",
+    "licenseFile": "/node_modules/@angular/platform-browser-dynamic/README.md"
+  },
+  "@angular/platform-browser@14.3.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/angular/angular",
+    "publisher": "angular",
+    "path": "/node_modules/@angular/platform-browser",
+    "licenseFile": "/node_modules/@angular/platform-browser/README.md"
+  },
+  "@angular/router@14.3.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/angular/angular",
+    "publisher": "angular",
+    "path": "/node_modules/@angular/router",
+    "licenseFile": "/node_modules/@angular/router/README.md"
+  },
+  "@kurkle/color@0.3.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/kurkle/color",
+    "publisher": "Jukka Kurkela",
+    "path": "/node_modules/@kurkle/color",
+    "licenseFile": "/node_modules/@kurkle/color/LICENSE.md"
+  },
+  "bank-crm-sample@0.0.0": {
+    "licenses": "UNLICENSED",
+    "private": true,
+    "path": "",
+    "licenseFile": "/LICENSE"
+  },
+  "chart.js@4.3.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/chartjs/Chart.js",
+    "path": "/node_modules/chart.js",
+    "licenseFile": "/node_modules/chart.js/LICENSE.md"
+  },
+  "chartjs-adapter-moment@1.0.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/chartjs/chartjs-adapter-moment",
+    "path": "/node_modules/chartjs-adapter-moment",
+    "licenseFile": "/node_modules/chartjs-adapter-moment/LICENSE.md"
+  },
+  "lodash-es@4.17.21": {
+    "licenses": "MIT",
+    "repository": "https://github.com/lodash/lodash",
+    "publisher": "John-David Dalton",
+    "email": "john.david.dalton@gmail.com",
+    "path": "/node_modules/lodash-es",
+    "licenseFile": "/node_modules/lodash-es/LICENSE"
+  },
+  "mat-timepicker@5.1.8": {
+    "licenses": "MIT",
+    "publisher": "Iliya Idakiev",
+    "url": "https://developers.google.com/community/experts/directory/profile/profile-iliya_idakiev",
+    "path": "/node_modules/mat-timepicker",
+    "licenseFile": "/node_modules/mat-timepicker/LICENSE"
+  },
+  "moment@2.29.4": {
+    "licenses": "MIT",
+    "repository": "https://github.com/moment/moment",
+    "publisher": "Iskren Ivov Chernev",
+    "email": "iskren.chernev@gmail.com",
+    "url": "https://github.com/ichernev",
+    "path": "/node_modules/moment",
+    "licenseFile": "/node_modules/moment/LICENSE"
+  },
+  "ng2-charts@4.1.1": {
+    "licenses": "ISC",
+    "repository": "https://github.com/valor-software/ng2-charts",
+    "publisher": "Aviad Pineles",
+    "path": "/node_modules/ng2-charts",
+    "licenseFile": "/node_modules/ng2-charts/README.md"
+  },
+  "parse5@5.1.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/inikulin/parse5",
+    "publisher": "Ivan Nikulin",
+    "email": "ifaaan@gmail.com",
+    "url": "https://github.com/inikulin",
+    "path": "/node_modules/@angular/cdk/node_modules/parse5",
+    "licenseFile": "/node_modules/@angular/cdk/node_modules/parse5/LICENSE"
+  },
+  "rxjs@7.5.7": {
+    "licenses": "Apache-2.0",
+    "repository": "https://github.com/reactivex/rxjs",
+    "publisher": "Ben Lesh",
+    "email": "ben@benlesh.com",
+    "path": "/node_modules/rxjs",
+    "licenseFile": "/node_modules/rxjs/LICENSE.txt"
+  },
+  "tslib@2.5.0": {
+    "licenses": "0BSD",
+    "repository": "https://github.com/Microsoft/tslib",
+    "publisher": "Microsoft Corp.",
+    "path": "/node_modules/tslib",
+    "licenseFile": "/node_modules/tslib/LICENSE.txt"
+  },
+  "zone.js@0.11.8": {
+    "licenses": "MIT",
+    "repository": "https://github.com/angular/angular",
+    "publisher": "Brian Ford",
+    "path": "/node_modules/zone.js",
+    "licenseFile": "/node_modules/zone.js/LICENSE"
+  }
+}

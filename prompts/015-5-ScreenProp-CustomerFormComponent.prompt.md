@@ -1,0 +1,48 @@
+# html
+```html
+<div class="customer-form">
+  <form (ngSubmit)="onSubmit()" #customerForm="ngForm">
+    <mat-form-field>
+      <mat-label>姓</mat-label>
+      <input matInput required [(ngModel)]="customer.lastName" name="lastName">
+      <mat-error *ngIf="customerForm.controls['lastName'].invalid && customerForm.controls['lastName'].touched">
+        姓は必須項目です。
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>名</mat-label>
+      <input matInput required [(ngModel)]="customer.firstName" name="firstName">
+      <mat-error *ngIf="customerForm.controls['firstName'].invalid && customerForm.controls['firstName'].touched">
+        名は必須項目です。
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>メールアドレス</mat-label>
+      <input matInput required email [(ngModel)]="customer.email" name="email">
+      <mat-error *ngIf="customerForm.controls['email'].invalid && customerForm.controls['email'].touched">
+        正しいメールアドレスを入力してください。
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>電話番号</mat-label>
+      <input matInput required [(ngModel)]="customer.phone" name="phone">
+      <mat-error *ngIf="customerForm.controls['phone'].invalid && customerForm.controls['phone'].touched">
+        正しい電話番号を入力してください。
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>住所</mat-label>
+      <input matInput required [(ngModel)]="customer.address" name="address">
+      <mat-error *ngIf="customerForm.controls['address'].invalid && customerForm.controls['address'].touched">
+        住所は必須項目です。
+      </mat-error>
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit">保存</button>
+  </form>
+</div>
+```
+
+# prompt
+The above html is an Angular template.
+Please list all "variables", "constants", "ViewChild", and "functions" needed to create the ts. mat-table's column names are also "constants".
+The format should be name, type, description.

@@ -1,0 +1,194 @@
+# Reference
+## Model and Service classes
+```typescript
+export enum UserRole {ADMIN = 'ADMIN',MANAGER = 'MANAGER',EMPLOYEE = 'EMPLOYEE'}
+export enum CustomerSegment {PREMIUM = 'PREMIUM',STANDARD = 'STANDARD',BASIC = 'BASIC'}
+export enum SaleStatus {COMPLETED = 'COMPLETED',PENDING = 'PENDING',CANCELED = 'CANCELED'}
+export enum TaskStatus {NOT_STARTED = 'NOT_STARTED',IN_PROGRESS = 'IN_PROGRESS',COMPLETED = 'COMPLETED',CANCELED = 'CANCELED'}
+export enum ClaimStatus {OPEN = 'OPEN',IN_PROGRESS = 'IN_PROGRESS',RESOLVED = 'RESOLVED',CLOSED = 'CLOSED'}
+export enum ReferralStatus {NEW = 'NEW',CONTACTED = 'CONTACTED',CONVERTED = 'CONVERTED',LOST = 'LOST'}
+export enum FileType {PDF = 'PDF',DOCX = 'DOCX',XLSX = 'XLSX',PPTX = 'PPTX'}
+export enum InfoCategory {SUCCESS_STORY = 'SUCCESS_STORY',KNOW_HOW = 'KNOW_HOW',TIP = 'TIP'}
+export enum TrainingStatus {UPCOMING = 'UPCOMING',ONGOING = 'ONGOING',COMPLETED = 'COMPLETED',CANCELED = 'CANCELED'}
+export class User {constructor(public id: number,public username: string,public password: string,public email: string,public firstName: string,public lastName: string,public role: UserRole,public profileImage: string) {}}
+export class Customer {constructor(public id: number,public firstName: string,public lastName: string,public email: string,public phone: string,public address: string,public registrationDate: Date,public segment: CustomerSegment) {}}
+export class Sale {constructor(public id: number,public customerId: number,public amount: number,public date: Date,public product: string,public status: SaleStatus) {}}
+export class SalesGoal {constructor(public id: number,public userId: number,public targetAmount: number,public startDate: Date,public endDate: Date,public progress: number) {}}
+export class Task {constructor(public id: number,public userId: number,public title: string,public description: string,public startDate: Date,public endDate: Date,public status: TaskStatus,public reminder: Reminder) {}}
+export class Reminder {constructor(public id: number,public taskId: number,public time: Date,public message: string) {}}
+export class SalesData {constructor(public id: number,public userId: number,public date: Date,public amount: number) {}}
+export class Kpi {constructor(public id: number,public name: string,public value: number,public target: number,public unit: string) {}}
+export class Claim {constructor(public id: number,public customerId: number,public title: string,public description: string,public date: Date,public status: ClaimStatus,public response: string) {}}
+export class Referral {constructor(public id: number,public customerId: number,public referralDate: Date,public status: ReferralStatus,public notes: string) {}}
+export class SalesLiterature {constructor(public id: number,public title: string,public description: string,public uploadDate: Date,public fileUrl: string,public fileType: FileType) {}}
+export class SharedInformation {constructor(public id: number,public userId: number,public title: string,public description: string,public date: Date,public category: InfoCategory) {}}
+export class Training {constructor(public id: number,public title: string,public description: string,public startDate: Date,public endDate: Date,public status: TrainingStatus,public participants: number[]) {}}
+export class TrainingEffectiveness {constructor(public id: number,public trainingId: number,public userId: number,public effectivenessScore: number) {}}
+// src/app/services/auth-service.ts
+export interface AuthService {login(username: string, password: string): Observable<User>;
+logout(): void;
+forgotPassword(email: string): Observable<boolean>;
+getToken(): string;
+}
+
+// src/app/services/claims-service.ts
+export interface ClaimsService {getClaims(): Observable<Claim[]>;
+respondToClaim(claimId: number, response: string): Observable<Claim>;
+getClaimDetails(claimId: number): Observable<Claim>;
+}
+
+// src/app/services/collaboration-service.ts
+export interface CollaborationService {getSharedInformation(): Observable<SharedInformation[]>;
+shareInformation(info: SharedInformation): Observable<SharedInformation>;
+}
+
+// src/app/services/customer-service.ts
+export interface CustomerService {createCustomer(customer: Customer): Observable<Customer>;
+updateCustomer(customer: Customer): Observable<Customer>;
+getCustomers(): Observable<Customer[]>;
+searchCustomers(query: string): Observable<Customer[]>;
+getCustomerDetails(customerId: number): Observable<Customer>;
+}
+
+// src/app/services/performance-service.ts
+export interface PerformanceService {getSalesPerformance(): Observable<SalesData[]>;
+getKpis(): Observable<Kpi[]>;
+}
+
+// src/app/services/reference-service.ts
+export interface ReferenceService {createReferral(referral: Referral): Observable<Referral>;
+updateReferral(referral: Referral): Observable<Referral>;
+getReferrals(): Observable<Referral[]>;
+getReferralDetails(referralId: number): Observable<Referral>;
+}
+
+// src/app/services/sales-literature-service.ts
+export interface SalesLiteratureService {uploadLiterature(literature: SalesLiterature): Observable<SalesLiterature>;
+getSalesLiterature(): Observable<SalesLiterature[]>;
+getLiteratureDetails(literatureId: number): Observable<SalesLiterature>;
+}
+
+// src/app/services/sales-service.ts
+export interface SalesService {getSalesHistory(): Observable<Sale[]>;
+createSalesGoal(salesGoal: SalesGoal): Observable<SalesGoal>;
+updateSalesGoal(salesGoal: SalesGoal): Observable<SalesGoal>;
+getSalesGoal(): Observable<SalesGoal>;
+}
+
+// src/app/services/task-service.ts
+export interface TaskService {createTask(task: Task): Observable<Task>;
+updateTask(task: Task): Observable<Task>;
+getTasks(): Observable<Task[]>;
+getTaskDetails(taskId: number): Observable<Task>;
+setReminder(taskId: number, reminder: Reminder): Observable<Reminder>;
+}
+
+// src/app/services/training-service.ts
+export interface TrainingService {getTrainingHistory(): Observable<Training[]>;
+participateInTraining(trainingId: number): Observable<Training>;
+getTrainingEffectiveness(): Observable<TrainingEffectiveness[]>;
+}
+
+// src/app/services/user-service.ts
+export interface UserService {getUserProfile(): Observable<User>;
+updateUserProfile(user: User): Observable<User>;
+getTeamMembers(): Observable<User[]>;
+}
+
+```
+    
+## Directory structure sample
+src/app/dialogs/sample-dialog.component/
+src/app/pages/sample-page.component/
+src/app/parts/sample-part.component/
+src/app/services/sample.service.ts
+src/app/models.ts
+
+# ClaimsListComponent
+## Detailed Screen Design Document
+### Screen name
+Claims List
+### Description
+The Claims List screen displays a list of all claims and inquiries submitted by customers. The list can be sorted and filtered by various criteria such as date, status, and customer name. The screen also provides a search function to find specific claims. Clicking on a claim in the list opens the Claim Details dialog, which displays more detailed information about the claim and allows the user to respond to it.
+### Child Elements
+#### Angular element components
+- ClaimDetailsDialog(@Input:{claim: Claim}, @Output:{claimChange: EventEmitter<Claim>})
+#### Angular dialog components
+None
+#### HTML components
+- mat-table
+### Screen layout
+The Claims List screen consists of a header, a search bar, and a table displaying the list of claims. The header contains the title of the screen and a button to create a new claim. The search bar allows the user to search for claims by customer name or claim title. The table displays the list of claims with columns for claim title, customer name, date, status, and action buttons. The action buttons allow the user to respond to the claim or view more details about it.
+### Screen behavior
+- When the screen is loaded, the list of claims is retrieved from the ClaimsService.
+- The user can search for claims by entering a search query in the search bar. The list of claims is filtered based on the search query.
+- The user can sort the list of claims by clicking on the column headers.
+- The user can click on a claim in the list to open the Claim Details dialog.
+- The user can respond to a claim from the Claim Details dialog.
+- When a claim is responded to, the ClaimsService is called to update the claim status and response.
+- When a claim is responded to, the Claims List screen is refreshed to reflect the updated claim status.
+### Input Form
+None
+### Error messages
+- "Failed to retrieve claims. Please try again later." - displayed when the ClaimsService fails to retrieve the list of claims.
+- "Failed to respond to claim. Please try again later." - displayed when the ClaimsService fails to update the claim status and response. 
+### Model classes used (excluding use from child components)
+- Claim(id: number, customerId: number, title: string, description: string, date: Date, status: ClaimStatus, response: string)
+### Service classes and methods used (excluding calls from child components)
+- ClaimsService: getClaims(): Observable<Claim[]>, respondToClaim(claimId: number, response: string): Observable<Claim>, getClaimDetails(claimId: number): Observable<Claim>
+### @Input (as Angular component)
+- claims: Claim[]
+### @Output (as Angular component)
+
+### MAT_DIALOG_DATA (as Angular dialog component)
+
+### Variables:
+- claims: any[] - an array of objects representing the claims to be displayed in the table
+- displayedColumns: string[] - an array of strings representing the column names to be displayed in the table
+
+### Constants:
+- N/A
+
+### ViewChild:
+- N/A
+
+### Functions:
+- openClaimDetailsDialog(claim: any): void - a function that opens a dialog to display the details of a selected claim
+- onClaimChange(claim: any): void - a function that is called when a claim is updated in the dialog and updates the corresponding claim in the table
+
+
+## typescript template
+```typescript
+// src/app/parts/claims-list.component.ts
+import { Component, OnInit } from '@angular/core';
+import { Claim } from '../../models';
+import { ClaimsService } from '../../services';
+
+@Component({
+    selector: 'app-claims-list',
+    templateUrl: './claims-list.component.html',
+    styleUrls: ['./claims-list.component.scss']
+})
+export class ClaimsListComponent implements OnInit {
+
+    @Input() claims: Claim[];
+
+    constructor(private claimsService: ClaimsService) {
+    }
+
+    ngOnInit(): void {
+    }
+}
+```
+---
+# prompt
+Please carefully review the design information up to this point and add any missing features to COMPONENT.
+Be sure to inspect the following points yourself before submitting.
+- Please use AngularMaterial to create a polished design.
+- Pay attention to the types and variable names (especially the difference between camel case and snake case).
+- The argument and return type of the service class name must be correct.
+- The @Input and @Output specifications are often forgotten. Please do not forget to check them.
+- screen should be for Japanese.
+- Replace all TODOs with implementation.
+- Import statements and DI statements will be inspected.
+Please write claims-list.component.ts, as no explanation is needed.

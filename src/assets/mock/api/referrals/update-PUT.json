@@ -1,0 +1,9 @@
+{
+    "referral": {
+        "id": 1,
+        "customerId": 1,
+        "referralDate": "2022-01-01T00:00:00.000Z",
+        "status": "CONTACTED",
+        "notes": "紹介者と連絡を取りました。"
+    }
+}

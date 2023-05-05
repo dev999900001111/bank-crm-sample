@@ -1,0 +1,1 @@
+{"modelClassesUsed":["SharedInformation"],"serviceClassesUsed":["CollaborationService"]}

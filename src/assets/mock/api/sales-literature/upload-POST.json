@@ -1,0 +1,10 @@
+{
+    "literature": {
+        "id": 1,
+        "title": "営業資料1",
+        "description": "新製品の説明資料です。",
+        "uploadDate": "2022-01-01T00:00:00.000Z",
+        "fileUrl": "https://example.com/sales-literature1.pdf",
+        "fileType": "PDF"
+    }
+}

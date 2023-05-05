@@ -1,0 +1,39 @@
+<div class="container">
+  <h2 class="title">顧客リスト</h2>
+  <mat-form-field class="search-bar">
+    <input matInput placeholder="名前、メールアドレス、電話番号で検索" [(ngModel)]="searchQuery">
+  </mat-form-field>
+  <button mat-raised-button color="primary" class="add-button" (click)="addCustomer()">新しい顧客を追加</button>
+  <button mat-raised-button color="primary" class="export-button" (click)="exportList()">CSVエクスポート</button>
+  <table mat-table [dataSource]="filteredCustomers" class="customer-table">
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef (click)="sort('name')">名前</th>
+      <td mat-cell *matCellDef="let customer">{{customer.firstName}} {{customer.lastName}}</td>
+    </ng-container>
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef (click)="sort('email')">メールアドレス</th>
+      <td mat-cell *matCellDef="let customer">{{customer.email}}</td>
+    </ng-container>
+    <ng-container matColumnDef="phone">
+      <th mat-header-cell *matHeaderCellDef (click)="sort('phone')">電話番号</th>
+      <td mat-cell *matCellDef="let customer">{{customer.phone}}</td>
+    </ng-container>
+    <ng-container matColumnDef="address">
+      <th mat-header-cell *matHeaderCellDef (click)="sort('address')">住所</th>
+      <td mat-cell *matCellDef="let customer">{{customer.address}}</td>
+    </ng-container>
+    <ng-container matColumnDef="registrationDate">
+      <th mat-header-cell *matHeaderCellDef (click)="sort('registrationDate')">登録日</th>
+      <td mat-cell *matCellDef="let customer">{{customer.registrationDate | date:'yyyy/MM/dd'}}</td>
+    </ng-container>
+    <ng-container matColumnDef="segment">
+      <th mat-header-cell *matHeaderCellDef (click)="sort('segment')">セグメント</th>
+      <td mat-cell *matCellDef="let customer">{{customer.segment}}</td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let customer; columns: displayedColumns;" (click)="viewDetails(customer)">
+    </tr>
+  </table>
+  <!-- TODO -->
+  <!-- <app-customer-details-dialog [customer]="selectedCustomer" (close)="selectedCustomer = null"></app-customer-details-dialog> -->
+</div>

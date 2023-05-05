@@ -1,0 +1,1 @@
+{"modelClassesUsed":["SalesLiterature"],"serviceClassesUsed":["SalesLiteratureService"]}

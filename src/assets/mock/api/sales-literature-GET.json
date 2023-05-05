@@ -1,0 +1,36 @@
+{
+    "literature": [
+        {
+            "id": 1,
+            "title": "営業資料1",
+            "description": "新製品の説明資料です。",
+            "uploadDate": "2022-01-01T00:00:00.000Z",
+            "fileUrl": "https://example.com/sales-literature1.pdf",
+            "fileType": "PDF"
+        },
+        {
+            "id": 2,
+            "title": "営業資料2",
+            "description": "サービスの特徴を説明する資料です。",
+            "uploadDate": "2022-01-02T00:00:00.000Z",
+            "fileUrl": "https://example.com/sales-literature2.docx",
+            "fileType": "DOCX"
+        },
+        {
+            "id": 3,
+            "title": "営業資料3",
+            "description": "販売実績をまとめた資料です。",
+            "uploadDate": "2022-01-03T00:00:00.000Z",
+            "fileUrl": "https://example.com/sales-literature3.xlsx",
+            "fileType": "XLSX"
+        },
+        {
+            "id": 4,
+            "title": "営業資料4",
+            "description": "新サービスのプレゼン資料です。",
+            "uploadDate": "2022-01-04T00:00:00.000Z",
+            "fileUrl": "https://example.com/sales-literature4.pptx",
+            "fileType": "PPTX"
+        }
+    ]
+}

@@ -1,0 +1,12 @@
+{
+    "customer": {
+        "id": 1,
+        "firstName": "太郎",
+        "lastName": "山田",
+        "email": "taro.yamada@example.com",
+        "phone": "090-1234-5678",
+        "address": "東京都渋谷区1-2-3",
+        "registrationDate": "2021-01-01T00:00:00.000Z",
+        "segment": "STANDARD"
+    }
+}

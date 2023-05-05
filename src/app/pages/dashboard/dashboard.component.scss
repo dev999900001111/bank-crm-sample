@@ -1,0 +1,63 @@
+.dashboard-card {
+    margin: 0 auto;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.kpi-section {
+    width: 500px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 24px;
+}
+
+.kpi-item {
+    text-align: center;
+}
+
+.kpi-value {
+    font-size: 36px;
+    font-weight: bold;
+    color: #1976d2;
+    margin-bottom: 8px;
+}
+
+.kpi-label {
+    font-size: 14px;
+    color: #666;
+}
+
+.recent-activities-section {
+    margin-bottom: 24px;
+}
+
+.recent-activities-section h3 {
+    font-size: 20px;
+    margin-bottom: 16px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    font-size: 14px;
+}
+
+thead {
+    background-color: #f5f5f5;
+}
+
+th {
+    font-weight: normal;
+    text-align: left;
+    padding: 12px 16px;
+    border-bottom: 1px solid #ddd;
+}
+
+td {
+    text-align: left;
+    padding: 12px 16px;
+    border-bottom: 1px solid #ddd;
+}
+

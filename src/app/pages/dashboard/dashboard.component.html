@@ -1,0 +1,64 @@
+<mat-card class="dashboard-card">
+  <mat-card-header>
+    <mat-card-title class="dashboard-card-title">ダッシュボード</mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content class="dashboard-card-content">
+    <div class="kpi-section">
+      <div class="kpi-item">
+        <div class="kpi-value">{{totalSalesAmount | currency:'JPY'}}</div>
+        <div class="kpi-label">総売上高</div>
+      </div>
+      <div class="kpi-item">
+        <div class="kpi-value">{{salesGoalProgress}}%</div>
+        <div class="kpi-label">目標達成率</div>
+      </div>
+      <div class="kpi-item">
+        <div class="kpi-value">{{customerSatisfactionRate}}%</div>
+        <div class="kpi-label">顧客満足度</div>
+      </div>
+    </div>
+
+    <div class="recent-activities-section">
+      <h3 class="recent-activities-section-title">最近のアクティビティ</h3>
+      <table class="recent-activities-table">
+        <thead>
+          <tr>
+            <th class="recent-activities-table-header">日付</th>
+            <th class="recent-activities-table-header">タイトル</th>
+            <th class="recent-activities-table-header">種類</th>
+            <th class="recent-activities-table-header">ステータス</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let activity of recentActivities">
+            <td class="recent-activities-table-cell">{{activity.date | date: 'yyyy/MM/dd'}}</td>
+            <td class="recent-activities-table-cell">{{activity.title}}</td>
+            <td class="recent-activities-table-cell">{{activity.type}}</td>
+            <td class="recent-activities-table-cell">{{activity.status}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="upcoming-tasks-section">
+      <h3 class="upcoming-tasks-section-title">今後のタスク</h3>
+      <table class="upcoming-tasks-table">
+        <thead>
+          <tr>
+            <th class="upcoming-tasks-table-header">期限</th>
+            <th class="upcoming-tasks-table-header">タイトル</th>
+            <th class="upcoming-tasks-table-header">ステータス</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let task of upcomingTasks">
+            <td class="upcoming-tasks-table-cell">{{task.endDate | date: 'yyyy/MM/dd'}}</td>
+            <td class="upcoming-tasks-table-cell">{{task.title}}</td>
+            <td class="upcoming-tasks-table-cell">{{task.status}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </mat-card-content>
+</mat-card>
